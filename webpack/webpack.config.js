@@ -10,14 +10,25 @@ module.exports = {
     devtool: 'inline-source-map',
     target: 'web',
     entry: {
-        bundle: './src/index.jsx'
+        bundle: [
+            // activate HMR for React
+            'react-hot-loader/patch',
+            // bundle the client for webpack-dev-server
+            // and connect to the provided endpoint
+            'webpack-dev-server/client?http://localhost:3000',
+            // bundle the client for hot reloading
+            // only- means to only hot reload for successful updates
+            'webpack/hot/only-dev-server',
+            // Our app main entry
+            './src/index.jsx'
+        ]
     },
     output: {
         filename: 'static/js/[name].js',
         path: commonPaths.outputPath,
         chunkFilename: 'static/js/[name].chunk.js',
         publicPath: '/',
-        pathinfo: true        
+        pathinfo: true
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -55,9 +66,8 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 use: [
-                    {
-                        loader: 'babel-loader'
-                    }
+                    { loader: 'react-hot-loader/webpack' },
+                    { loader: 'babel-loader' }
                 ],
                 include: commonPaths.srcPath          // Use include instead exclude to improve the build performance
             }

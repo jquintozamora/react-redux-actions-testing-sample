@@ -11,7 +11,7 @@ import thunk from 'redux-thunk'
 // Redux-Logger: http://evgenyrodionov.github.io/redux-logger/
 // import createLogger from 'redux-logger'
 
-import rootReducer from "../reducers/index"
+import rootReducer from "../reducers"
 
 export default function configureStore(initialState) {
     const middleware = [thunk]
@@ -25,12 +25,23 @@ export default function configureStore(initialState) {
         })
         : compose
 
-    const enhancer = composeEnhancers(
+    const composedEnhancer = composeEnhancers(
         applyMiddleware(...middleware)
     )
 
-    console.log('here')
-    console.log(rootReducer)
-    console.log(enhancer)
-    return createStore(rootReducer, enhancer);
+    const store = createStore(
+        rootReducer,
+        composedEnhancer
+    );
+
+    if(process.env.NODE_ENV !== "production") {
+        if(module.hot) {
+            module.hot.accept("../reducers", () =>{
+                const newRootReducer = require("../reducers").default;
+                store.replaceReducer(newRootReducer)
+            })
+        }
+    }
+
+    return store
 }

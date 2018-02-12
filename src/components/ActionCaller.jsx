@@ -6,21 +6,23 @@ import { connect } from 'react-redux'
 // actions
 import {
   counterIncrement,
-  counterDecrement
+  counterDecrement,
+  resetCounter
 } from '../actions/spinnerActions'
 
 
 const mapStateToProps = (state) => ({
-  isEditingEnabled: state.spinner.visible
+  isLoaderVisible: state.spinner.visible
 })
 
 const mapDispatchToProps = {
   counterIncrement,
-  counterDecrement
+  counterDecrement,
+  resetCounter
 }
 
 export const ActionCaller = (props) => {
-  const { counterIncrement, counterDecrement } = props
+  const { isLoaderVisible, counterIncrement, counterDecrement, resetCounter } = props
   return (
     <div>
       <button
@@ -35,9 +37,21 @@ export const ActionCaller = (props) => {
       >
         Remove!
       </button>
+      <button
+        style={{ width: 200, height: 100, fontSize: 32 }}
+        onClick={() => resetCounter()}
+      >
+        Reset!
+      </button>
+      <br />
+      <br />
+      {
+        isLoaderVisible
+          ? <div>Loading......</div>
+          : null
+      }
     </div>
   )
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(ActionCaller)
