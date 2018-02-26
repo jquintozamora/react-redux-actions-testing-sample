@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import ActionCaller from '../components/ActionCaller'
+import RecipeList from './RecipeList'
 
-export default class App extends Component {
+export default class Main extends Component {
     render() {
         return (
           <div className="app-container">
-            <ActionCaller name="José" />
+            <RecipeList />
           </div>
         )
     }

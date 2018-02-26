@@ -8,7 +8,7 @@ import {
   counterIncrement,
   counterDecrement,
   resetCounter
-} from '../actions/spinnerActions'
+} from '../../actions/spinnerActions'
 
 
 const mapStateToProps = (state) => ({

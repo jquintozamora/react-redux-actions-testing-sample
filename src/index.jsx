@@ -10,7 +10,7 @@ const store = configureStore()
 /*
   Main App Container
  */
-import App from "./containers/App"
+import App from "./components/containers/Main"
 
 const reactContainer = document.getElementById('starter')
 
@@ -26,7 +26,7 @@ render(
 // Hot Module Replacement API
 if (module.hot) {
   module.hot.accept(() => {
-    const NextApp = require('./containers/App').default
+    const NextApp = require('./components/containers/Main').default
     render(
       <Provider store={store}>
         <AppContainer>
