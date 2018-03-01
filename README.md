@@ -1,5 +1,10 @@
 # Redux actions testing sample
 
+This sample is to provide a guide on how to test complex redux actions using different middlewares.
+
+- [redux-thunk](https://github.com/gaearon/redux-thunk)
+- [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware)
+- [redux-async-queue](https://github.com/zackargyle/redux-async-queue)
 
 [Recipe Search API](https://developer.edamam.com/edamam-docs-recipe-api)
 
