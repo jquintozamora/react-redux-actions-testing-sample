@@ -6,7 +6,12 @@ This sample is to provide a guide on how to test complex redux actions using dif
 - [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware)
 - [redux-async-queue](https://github.com/zackargyle/redux-async-queue)
 
+APIS
+
+Cryptocurrency
+[Coin Market Cap](https://api.coinmarketcap.com)
 [Recipe Search API](https://developer.edamam.com/edamam-docs-recipe-api)
+
 
 TODOS:
 - Include middlewares

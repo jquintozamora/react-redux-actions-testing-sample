@@ -15,12 +15,12 @@ module.exports = {
             'react-hot-loader/patch',
             // bundle the client for webpack-dev-server
             // and connect to the provided endpoint
-            'webpack-dev-server/client?http://localhost:3000',
+            'webpack-dev-server/client?http://localhost:4000',
             // bundle the client for hot reloading
             // only- means to only hot reload for successful updates
             'webpack/hot/only-dev-server',
             // Our app main entry
-            './src/index.jsx'
+            './src/client/index.jsx'
         ]
     },
     output: {
@@ -37,7 +37,7 @@ module.exports = {
         hot: true, // enable HMR on the server
         contentBase: commonPaths.contentBasePath, // match the output path
         publicPath: '/', // match the output `publicPath`
-        port: 3000,
+        port: 4000,
         historyApiFallback: true,
         stats: {
             colors: true, // color is life
