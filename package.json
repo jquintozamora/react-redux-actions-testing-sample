@@ -9,7 +9,7 @@
     "url": "https://blog.josequinto.com"
   },
   "scripts": {
-    "start:server": "json-server --watch ./src/server/db.json",
+    "start:server": "json-server -p 3333 --watch ./src/server/db.json",
     "dev": "webpack-dev-server --mode development  --open --config ./webpack/webpack.config.js",
     "test": "npm run jest"
   },

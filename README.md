@@ -12,6 +12,9 @@ Cryptocurrency
 [Coin Market Cap](https://api.coinmarketcap.com)
 [Recipe Search API](https://developer.edamam.com/edamam-docs-recipe-api)
 
+Animated bike:
+http://pixel-industry.com/freebies/css-animated-bicycle/index.html
+
 
 TODOS:
 - Include middlewares
