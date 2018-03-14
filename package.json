@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start:server": "json-server --watch ./src/server/db.json",
-    "dev": "webpack-dev-server --open --config ./webpack/webpack.config.js",
+    "dev": "webpack-dev-server --mode development  --open --config ./webpack/webpack.config.js",
     "test": "npm run jest"
   },
   "devDependencies": {
